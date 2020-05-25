@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "ReactiveCocoaLayout"
-    s.version      = "0.4"
+    s.version      = "0.5.2.1"
     s.summary      = "Reactive layout framework built on top of ReactiveCocoa."
     s.description  = <<-DESC
                         ReactiveCocoaLayout is a framework for describing Cocoa and Cocoa Touch layouts in a reactive way, based on ReactiveCocoa.
@@ -9,17 +9,13 @@ Pod::Spec.new do |s|
     s.license      = { :type => "MIT", :file => "LICENSE"}
     s.author       = { "ReactiveCocoa" => "ReactiveCocoa" }
     s.requires_arc = true
-    s.source       = { :git => "https://github.com/rannger/ReactiveCocoaLayout.git", :tag => "0.4" }
+    s.source       = { :git => "https://github.com/rannger/ReactiveCocoaLayout.git", :tag => "0.5.2.1" }
     s.ios.deployment_target = "6.0"
     s.osx.deployment_target = "10.7"
     s.source_files = "ReactiveCocoaLayout/*.{h,m}"
 
-    s.subspec 'ReactiveObjC' do |sp|
-        sp.dependency 'ReactiveObjC', '3.1.1'
-    end
-
     s.dependency "Archimedes"
-    s.dependency "ReactiveObjC"
+    s.dependency "ReactiveObjC", "3.1.1"
     s.ios.frameworks = ["Foundation","QuartzCore","CoreGraphics","UIKit"]
     s.osx.frameworks = ["Foundation","QuartzCore","ApplicationServices","Cocoa"]
     s.ios.exclude_files = ["ReactiveCocoaLayout/NSCell*.{h,m}","ReactiveCocoaLayout/NSControl*.{h,m}","ReactiveCocoaLayout/NSView*.{h,m}"]
